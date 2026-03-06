@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA2 — 🔖 APA Guide | Redlynch State College</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --teal: #00b4a6;
+    --teal-dark: #008a7e;
+    --coral: #ff6b5b;
+    --yellow: #ffd166;
+    --purple: #7b5ea7;
+    --navy: #1a2340;
+    --navy-light: #253060;
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --text: #1a2340;
+    --text-muted: #5a6480;
+    --border: #dde3f0;
+    --forming: #00b4a6;
+    --finding: #7b5ea7;
+    --analysing: #ff6b5b;
+    --interpreting: #f5a623;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,180,166,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(123,94,167,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 90%, rgba(255,107,91,0.15) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,180,166,0.2);
+    border: 1px solid rgba(0,180,166,0.5);
+    color: var(--teal);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.1rem;
+    font-weight: 300;
+    position: relative;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+  .hero-marks {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .hero-pill strong { color: var(--yellow); }
+
+  /* ── NAV TABS ── */
+  .nav-wrap {
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(26,35,64,0.08);
+  }
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--teal); }
+  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .section { display: block; }
+
+
+  /* ── CHECKPOINT TIMELINE ── */
+  .timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .section-sub { color: var(--text-muted); font-size: 1rem; }
+
+  .timeline {
+    position: relative;
+    padding-left: 3rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--teal), var(--purple), var(--coral), var(--yellow), var(--teal));
+    border-radius: 3px;
+  }
+  .checkpoint {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .checkpoint:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(26,35,64,0.1);
+  }
+  .checkpoint-dot {
+    position: absolute;
+    left: -2.45rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #fff;
+    border: 3px solid var(--bg);
+  }
+  .checkpoint-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .checkpoint-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    color: #fff;
+  }
+  .checkpoint-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .checkpoint h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+  .checkpoint p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .checkpoint-tasks {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .task-chip {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .dates-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .date-item { text-align: center; }
+  .date-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+  .date-val { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+  .date-val.highlight { color: var(--yellow); }
+
+  /* ── WRITING GUIDE ── */
+  .guide-grid { display: grid; gap: 1.5rem; }
+
+  .guide-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .guide-card:hover { box-shadow: 0 8px 28px rgba(26,35,64,0.1); }
+
+  .guide-card-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .guide-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .guide-card-title {
+    flex: 1;
+  }
+  .guide-card-title h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--navy);
+  }
+  .guide-card-title .word-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+  .guide-chevron {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: transform 0.3s;
+  }
+
+
+  .guide-card-body { padding: 0 1.5rem 1.5rem; overflow: visible; }
+
+  .guide-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 1.25rem;
+  }
+
+  .tip-box {
+    background: #f0faf9;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: var(--navy);
+  }
+  .tip-box strong { color: var(--teal-dark); }
+
+  .mark-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    margin: 0.15rem;
+    font-weight: 500;
+  }
+  .mark-good { background: #e6faf8; color: #00856f; border: 1px solid #b3ede7; }
+  .mark-mid  { background: #fff8e6; color: #8a6200; border: 1px solid #ffe9b3; }
+  .mark-low  { background: #fff0ee; color: #c0392b; border: 1px solid #fad5d0; }
+
+  .steps-list { list-style: none; counter-reset: steps; }
+  .steps-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .steps-list li::before {
+    content: counter(steps);
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  .marks-tag-row { margin-top: 0.75rem; }
+  .marks-tag-row p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem; font-weight: 500; }
+
+  /* ── MARKING CRITERIA ── */
+  .criteria-intro {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .crit-summary-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .crit-summary-item .crit-marks {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .crit-summary-item .crit-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .crit-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .crit-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .crit-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+  .crit-title {
+    flex: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .crit-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .crit-table { width: 100%; border-collapse: collapse; }
+  .crit-table th {
+    padding: 0.65rem 1.25rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: left;
+    background: var(--bg);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .crit-table td {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .crit-table tr:last-child td { border-bottom: none; }
+  .score-badge {
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    min-width: 2.5rem;
+    text-align: center;
+    color: #fff;
+  }
+  .score-high { background: #00856f; }
+  .score-mid  { background: #f5a623; }
+  .score-low  { background: #c0392b; }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+  .bullet-list li {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+  .bullet-list li::before {
+    content: '→';
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  /* ── QUICK TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .tip-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+  }
+  .tip-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .tip-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .tip-card p {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* colour helpers */
+  .c-teal   { color: var(--teal); }
+  .c-purple { color: var(--purple); }
+  .c-coral  { color: var(--coral); }
+  .c-yellow { color: var(--yellow); }
+  .bg-teal   { background: var(--teal); }
+  .bg-purple { background: var(--purple); }
+  .bg-coral  { background: var(--coral); }
+  .bg-yellow { background: var(--yellow); }
+  .light-teal   { background: #e0f7f5; color: var(--teal-dark); }
+  .light-purple { background: #f0ecfa; color: var(--purple); }
+  .light-coral  { background: #fff0ee; color: #c0392b; }
+  .light-yellow { background: #fff8e0; color: #8a6200; }
+
+  /* ── GLOSSARY ── */
+  .gloss-filter-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .gloss-filter {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-muted);
+  }
+  .gloss-filter:hover, .gloss-filter.active { border-color: var(--teal); color: var(--teal); background: #e0f7f5; }
+  .gloss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .gloss-card {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    padding: 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+  .gloss-card:hover { box-shadow: 0 6px 20px rgba(26,35,64,0.09); }
+  .gloss-term {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .gloss-crit-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.6rem;
+    color: #fff;
+  }
+  .gloss-def {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .gloss-level {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.25rem;
+  }
+  .level-high { background: #e6faf8; color: #00856f; }
+  .level-mid  { background: #fff8e6; color: #8a6200; }
+  .level-low  { background: #fff0ee; color: #c0392b; }
+
+  /* ── CHECKLIST ── */
+  .checklist-progress {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .progress-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .progress-bar-wrap {
+    background: var(--bg);
+    border-radius: 100px;
+    height: 14px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+    border-radius: 100px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .progress-count {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .progress-count span { color: var(--teal); }
+
+  .checklist-section {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+  .cl-section-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cl-section-icon {
+    width: 2rem; height: 2rem;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .cl-section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    flex: 1;
+  }
+  .cl-section-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .cl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .cl-item:last-child { border-bottom: none; }
+  .cl-item:hover { background: var(--bg); }
+  .cl-item.checked { background: #f0faf9; }
+  .cl-checkbox {
+    width: 1.35rem; height: 1.35rem;
+    border-radius: 6px;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    background: var(--white);
+  }
+  .cl-item.checked .cl-checkbox {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .cl-checkbox-tick {
+    color: #fff;
+    font-size: 0.75rem;
+    display: none;
+  }
+  .cl-item.checked .cl-checkbox-tick { display: block; }
+  .cl-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .cl-item.checked .cl-text {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--teal);
+  }
+
+  /* responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem 3rem; }
+    .container { padding: 1.5rem 1rem; }
+    .crit-table th, .crit-table td { padding: 0.65rem 0.85rem; }
+    .gloss-grid { grid-template-columns: 1fr; }
+  }
+
+  .nav-link { flex-shrink:0; padding:1rem 1.25rem; display:inline-block; text-decoration:none;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:0.82rem; font-weight:600;
+    color:var(--text-muted); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; }
+  .nav-link:hover { color:var(--teal); }
+  .nav-link.active { color:var(--teal); border-bottom-color:var(--teal); }
+  .guide-chevron { display:none; }
+  .guide-card-header { cursor:default; }
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge">Redlynch State College · 2025–2026</div>
+  <h1>Psychology <span>IA2</span><br>Student Guide</h1>
+  <p class="hero-sub">Everything you need to write your Student Experiment report — step by step.</p>
+  <div class="hero-marks">
+    <span class="hero-pill">📋 Student Experiment</span>
+    <span class="hero-pill">📝 Up to <strong>2000 words</strong></span>
+    <span class="hero-pill">⭐ Worth <strong>20%</strong></span>
+    <span class="hero-pill">⏱ ~10 hours class time</span>
+  </div>
+</div>
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <a href="index.html" class="nav-link">📅 Checkpoints</a>
+    <a href="writing.html" class="nav-link">✍️ Writing Guide</a>
+    <a href="marking.html" class="nav-link">🎯 Marking Criteria</a>
+    <a href="theory.html" class="nav-link">🧠 Theory & Concepts</a>
+    <a href="glossary.html" class="nav-link">📖 Glossary</a>
+    <a href="checklist.html" class="nav-link">☑️ Checklist</a>
+    <a href="apa.html" class="nav-link active">🔖 APA Guide</a>
+    <a href="tips.html" class="nav-link">💡 Quick Tips</a>
+  </div>
+</div>
+<div class="container">
+<div class="container">
+
+  <div class="timeline-header">
+    <h2 class="section-title">APA Referencing Guide</h2>
+    <p class="section-sub">Everything you need to reference correctly — formats, examples, word count rules, and common mistakes.</p>
+  </div>
+
+  <!-- WHERE IS IT MARKED -->
+  <div style="background:var(--navy);border-radius:16px;padding:1.75rem 2rem;margin-bottom:2rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+    <div style="background:rgba(0,180,166,0.15);border:1px solid rgba(0,180,166,0.4);border-radius:12px;padding:1.25rem;text-align:center;">
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal);margin-bottom:0.3rem;">2 marks</div>
+      <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.4;"><strong style="color:#fff;">Fluent &amp; concise</strong> scientific language + <strong style="color:#fff;">appropriate</strong> referencing conventions</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:1.25rem;text-align:center;">
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;color:var(--yellow);margin-bottom:0.3rem;">1 mark</div>
+      <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.4;"><strong style="color:#fff;">Competent</strong> scientific language + <strong style="color:#fff;">basic</strong> referencing conventions</div>
+    </div>
+    <div style="background:rgba(255,107,91,0.12);border:1px solid rgba(255,107,91,0.3);border-radius:12px;padding:1.25rem;text-align:center;">
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;color:var(--coral);margin-bottom:0.3rem;">0 marks</div>
+      <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.4;"><strong style="color:#fff;">Inappropriate</strong> scientific language + <strong style="color:#fff;">inappropriate/insufficient</strong> referencing</div>
+    </div>
+  </div>
+
+  <!-- WORD COUNT -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-yellow">🔢</div>
+      <div class="guide-card-title">
+        <h3>Word Count — What's In &amp; What's Out</h3>
+        <div class="word-count">The 2000 word limit is absolute. No ±10%.</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div style="background:#e6faf8;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;font-weight:700;color:#00856f;margin-bottom:0.6rem;">✅ INCLUDED in word count</p>
+          <ul class="bullet-list" style="gap:0.3rem;">
+            <li>All words in the text of the response</li>
+            <li>Title, headings and subheadings</li>
+            <li>Tables/figures/diagrams containing information <em>other than</em> raw or processed data</li>
+            <li>Quotations</li>
+            <li>Footnotes and endnotes (unless bibliographical)</li>
+          </ul>
+        </div>
+        <div style="background:#fff0ee;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;font-weight:700;color:#c0392b;margin-bottom:0.6rem;">❌ EXCLUDED from word count</p>
+          <ul class="bullet-list" style="gap:0.3rem;">
+            <li>Title pages</li>
+            <li>Contents pages</li>
+            <li>Abstract</li>
+            <li>Raw or processed data in tables, figures, diagrams</li>
+            <li>Bibliography / reference list</li>
+            <li>Appendixes*</li>
+            <li>Page numbers</li>
+            <li>In-text citations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip-box"><strong>⚠️ Important:</strong> You must include a word count at the end of your report. Appendixes should only contain supplementary material not used directly as evidence when marking. The word count is <strong>absolute</strong> — no +/- 10% allowed.</div>
+    </div>
+  </div>
+
+  <!-- IN-TEXT CITATIONS -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-teal">💬</div>
+      <div class="guide-card-title">
+        <h3>In-Text Citations — Two Types</h3>
+        <div class="word-count">Use Author, Year only — not full title or credentials</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div class="tip-box"><strong>Key rule:</strong> APA formatting only requires the author's surname and the year of publication. Don't include titles, credentials, or institutional affiliations in your citations.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div style="background:#f0ecfa;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;color:var(--purple);margin-bottom:0.5rem;">Narrative citation</p>
+          <p style="font-size:0.88rem;color:var(--text);font-style:italic;margin-bottom:0.4rem;">"Grant et al. (1998) found that…"</p>
+          <p style="font-size:0.8rem;color:var(--text-muted);">Author name is part of your sentence. Year in parentheses after name.</p>
+        </div>
+        <div style="background:#e0f7f5;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;color:var(--teal-dark);margin-bottom:0.5rem;">Parenthetical citation</p>
+          <p style="font-size:0.88rem;color:var(--text);font-style:italic;margin-bottom:0.4rem;">"…performance was better in matching conditions (Grant et al., 1998)."</p>
+          <p style="font-size:0.8rem;color:var(--text-muted);">Both author and year in parentheses at the end. Use &amp; inside brackets.</p>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;font-weight:500;">What must be cited:</p>
+      <ul class="steps-list">
+        <li>Ideas, opinions and theories of authors — paraphrased or directly quoted</li>
+        <li>Direct quotes of spoken or written words</li>
+        <li>Factual information not considered common knowledge (statistics, data)</li>
+        <li>Visual information including graphs, drawings and photographs</li>
+      </ul>
+      <div class="tip-box" style="margin-top:0.75rem;background:#fff8e0;border-color:var(--yellow);"><strong>Conciseness tip:</strong> Saved 12 words from one sentence by removing credentials! Don't write "an experiment conducted by Grant and colleagues at Iowa State University in (1998)" — just write "Grant et al. (1998)".</div>
+    </div>
+  </div>
+
+  <!-- JOURNAL ARTICLE -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-purple">📄</div>
+      <div class="guide-card-title">
+        <h3>Reference Format — Journal Article</h3>
+        <div class="word-count">Most common source type for Psychology IA2</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="background:var(--bg);border-radius:10px;padding:1.25rem;margin-bottom:1rem;font-family:monospace;font-size:0.85rem;line-height:1.8;color:var(--navy);">
+        Author, A. A., &amp; Author, B. B. (Year). Title of the article. <em>Name of the Periodical, volume</em>(issue), page–page. https://doi.org/xxxx
+      </div>
+      <div style="background:#f0ecfa;border-radius:10px;padding:1rem;margin-bottom:1rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:var(--purple);margin-bottom:0.5rem;">Example:</p>
+        <p style="font-size:0.85rem;color:var(--navy);line-height:1.7;font-family:monospace;">Pope, J., &amp; Owen, A. D. (2009). Emission trading schemes: Potential revenue effects, compliance costs and overall tax policy issues. <em>Energy Policy, 37</em>(4), 4595–4603. https://doi.org/10.1016/j.enpol.2009.06.014</p>
+      </div>
+      <ul class="steps-list">
+        <li>Last name first, followed by comma and initials. Space between initials.</li>
+        <li>Year in parentheses, followed by full stop</li>
+        <li>Article title — capitalise only first word and proper nouns. No italics.</li>
+        <li>Journal name — capitalise all major words. <em>Italicise</em> the journal name and volume number</li>
+        <li>Issue number in parentheses — do NOT italicise. No space before parentheses.</li>
+        <li>Include DOI for all works that have one. No full stop after DOI/URL.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOOK -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-teal">📚</div>
+      <div class="guide-card-title">
+        <h3>Reference Format — Book</h3>
+        <div class="word-count">Including textbook citations</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="background:var(--bg);border-radius:10px;padding:1.25rem;margin-bottom:1rem;font-family:monospace;font-size:0.85rem;line-height:1.8;color:var(--navy);">
+        Author, A. A., &amp; Author, B. B. (Copyright Year). <em>Title of the book</em> (7th ed.). Publisher. DOI or URL
+      </div>
+      <div style="background:#e0f7f5;border-radius:10px;padding:1rem;margin-bottom:1rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal-dark);margin-bottom:0.5rem;">Example:</p>
+        <p style="font-size:0.85rem;color:var(--navy);line-height:1.7;font-family:monospace;">Mack, C. (2005). <em>Looking at the Renaissance: Essays toward a conceptual appreciation.</em> Taylor &amp; Francis.</p>
+      </div>
+      <ul class="steps-list">
+        <li><em>Italicise</em> the book title. Capitalise only first word and proper nouns.</li>
+        <li>Include edition number in parentheses after title (if applicable)</li>
+        <li>Include publisher name — do NOT include publisher location</li>
+        <li>Include DOI if available; include URL for ebooks from other websites</li>
+        <li>If multiple publishers, separate with semicolons</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAPTER -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-coral">📑</div>
+      <div class="guide-card-title">
+        <h3>Reference Format — Chapter in Edited Book</h3>
+        <div class="word-count">When citing a specific chapter, not the whole book</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="background:var(--bg);border-radius:10px;padding:1.25rem;margin-bottom:1rem;font-family:monospace;font-size:0.85rem;line-height:1.8;color:var(--navy);">
+        Author, A. A. (Year). Title of chapter. In A. A. Editor &amp; B. B. Editor (Eds.), <em>Title of the book</em> (2nd ed., pp. #–#). Publisher. DOI or URL
+      </div>
+      <ul class="steps-list">
+        <li>Write "In" then the editor initials and surname (not inverted)</li>
+        <li>Use "(Ed.)" for one editor, "(Eds.)" for multiple editors, then comma</li>
+        <li>Include chapter page range — end with period</li>
+        <li>Include edition and volume number if applicable</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEBPAGE / WIKIPEDIA / DICTIONARY -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-yellow">🌐</div>
+      <div class="guide-card-title">
+        <h3>Reference Format — Webpage, Wikipedia &amp; Dictionary</h3>
+        <div class="word-count">Other common sources</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+          <thead>
+            <tr style="background:var(--bg);">
+              <th style="padding:0.6rem 0.9rem;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);border-bottom:1px solid var(--border);">Source</th>
+              <th style="padding:0.6rem 0.9rem;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);border-bottom:1px solid var(--border);">Format</th>
+              <th style="padding:0.6rem 0.9rem;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);border-bottom:1px solid var(--border);">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:0.8rem 0.9rem;font-weight:600;color:var(--navy);vertical-align:top;">Webpage</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text-muted);font-style:italic;vertical-align:top;font-size:0.82rem;">Author, A. A. (Year). <em>Title of page.</em> Retrieved from URL</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text);vertical-align:top;font-size:0.82rem;font-family:monospace;">Steel, W. (2008). <em>Hints for web authors.</em> Retrieved from http://www.mcsr.olemiss.edu/~mudws/webhints.html</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:#fafbfd;">
+              <td style="padding:0.8rem 0.9rem;font-weight:600;color:var(--navy);vertical-align:top;">Wikipedia</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text-muted);font-style:italic;vertical-align:top;font-size:0.82rem;"><em>Title of page.</em> (Date). In <em>Wikipedia.</em> Retrieved date from URL</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text);vertical-align:top;font-size:0.82rem;font-family:monospace;">Wikipedia contributors. (2019, June 26). Aggression. In <em>Wikipedia, The Free Encyclopedia.</em> Retrieved July 4, 2019, from https://en.wikipedia.org/w/…</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:0.8rem 0.9rem;font-weight:600;color:var(--navy);vertical-align:top;">Dictionary (print)</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text-muted);font-style:italic;vertical-align:top;font-size:0.82rem;">Author. (Year). <em>Title of Dictionary.</em> Publisher.</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text);vertical-align:top;font-size:0.82rem;font-family:monospace;">VandenBos, G. R. (Ed.). (2007). <em>APA dictionary of psychology.</em> American Psychological Association.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.8rem 0.9rem;font-weight:600;color:var(--navy);vertical-align:top;">Online Dictionary</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text-muted);font-style:italic;vertical-align:top;font-size:0.82rem;"><em>Term.</em> (Year). In <em>Title of Dictionary</em> (ed.). Retrieved from URL</td>
+              <td style="padding:0.8rem 0.9rem;color:var(--text);vertical-align:top;font-size:0.82rem;font-family:monospace;">Heuristic. (n.d.). In <em>Merriam-Webster's online dictionary</em> (11th ed.). Retrieved from http://www.m-w.com/dictionary/heuristic.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PSYCH-SPECIFIC -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-teal">🧠</div>
+      <div class="guide-card-title">
+        <h3>Psychology-Specific Sources (DSM, scales, instruments)</h3>
+        <div class="word-count">Use acronym after first mention</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:0.75rem;">For named scales and manuals, introduce the full name and acronym on first mention, then use the acronym only:</p>
+      <div style="background:var(--bg);border-radius:10px;padding:1rem;margin-bottom:0.75rem;">
+        <p style="font-size:0.82rem;color:var(--navy);margin-bottom:0.3rem;font-weight:600;">First mention:</p>
+        <p style="font-size:0.85rem;font-style:italic;color:var(--text);">The Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition (DSM-5; American Psychiatric Association, 2013)</p>
+        <p style="font-size:0.82rem;color:var(--navy);margin-top:0.5rem;margin-bottom:0.3rem;font-weight:600;">Subsequent mentions:</p>
+        <p style="font-size:0.85rem;font-style:italic;color:var(--text);">DSM-5 (American Psychiatric Association, 2013)</p>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-muted);">Same rule applies to: DASS-21 (Lovibond &amp; Lovibond, 1995), PSQI (Buysse et al., 1989), and any other named instrument.</p>
+    </div>
+  </div>
+
+  <!-- REFERENCE LIST FORMAT -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-purple">📋</div>
+      <div class="guide-card-title">
+        <h3>Reference List Format &amp; Layout</h3>
+        <div class="word-count">Start on a new page · Alphabetical order · Double-spaced</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <ul class="steps-list">
+        <li>Start on a new page. Heading: <strong>References</strong> — bold, centred (first-level heading)</li>
+        <li>Double-spaced throughout, with a hanging indent (first line flush left, subsequent lines indented)</li>
+        <li>Arranged in alphabetical order by first author's surname</li>
+        <li>Every in-text citation must appear in the reference list — and vice versa</li>
+        <li>Report formatting: 12pt, Times New Roman, double spacing</li>
+      </ul>
+      <div class="tip-box" style="margin-top:0.75rem;"><strong>Common mistake:</strong> In-text citations that don't match the reference list (e.g. citing "Encyclopedia Britannica, 2017" but listing an author name in the reference). Make sure the author name matches exactly in both places.</div>
+    </div>
+  </div>
+
+  <!-- SCIENTIFIC GENRE RULES -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-coral">🔬</div>
+      <div class="guide-card-title">
+        <h3>Scientific Language &amp; Genre Rules</h3>
+        <div class="word-count">What "fluent and concise" actually looks like</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div style="background:#e6faf8;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:#00856f;margin-bottom:0.6rem;">✅ Good scientific writing</p>
+          <ul class="bullet-list">
+            <li>Third person, past tense throughout</li>
+            <li>Correct psychological terminology used naturally</li>
+            <li>Statistics italicised (e.g. <em>p</em> = .05, <em>M</em> = 4.2)</li>
+            <li>Acronyms defined on first use (e.g. CBT)</li>
+            <li>Concise — no unnecessary words</li>
+            <li>Table headings above; figure captions below</li>
+            <li>All figures and tables referenced in text</li>
+          </ul>
+        </div>
+        <div style="background:#fff0ee;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:#c0392b;margin-bottom:0.6rem;">❌ Common errors</p>
+          <ul class="bullet-list">
+            <li>Writing "we" / "I" / "you"</li>
+            <li>Using present tense for what happened in your experiment</li>
+            <li>Copying text directly from a source (plagiarism)</li>
+            <li>In-text citations not matching reference list</li>
+            <li>Missing citations for ideas or facts</li>
+            <li>Spelling errors in author names</li>
+            <li>Stand-alone tables/figures with no description in text</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip-box"><strong>Plagiarism warning:</strong> You need to write the report in your OWN words. Copying sentences from a scaffold, another student, or a source — even with slight changes — is plagiarism and will be detected by Turnitin.</div>
+    </div>
+  </div>
+
+  <!-- HELPFUL VIDEOS -->
+  <div style="background:var(--white);border-radius:16px;border:1.5px solid var(--border);padding:1.5rem;">
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:1rem;">🎬 Helpful Videos</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.75rem;">
+      <a href="https://www.youtube.com/watch?v=opp259YvaoE" target="_blank" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;background:var(--bg);border-radius:10px;text-decoration:none;border:1px solid var(--border);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(26,35,64,0.1)'" onmouseout="this.style.boxShadow='none'">
+        <span style="font-size:1.3rem;">▶️</span>
+        <div><p style="font-size:0.83rem;font-weight:600;color:var(--navy);margin-bottom:0.1rem;">APA 7th: Basics of In-text Citations</p><p style="font-size:0.75rem;color:var(--text-muted);">3:47 · Scribbr</p></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=xXn2UITEqlo" target="_blank" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;background:var(--bg);border-radius:10px;text-decoration:none;border:1px solid var(--border);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(26,35,64,0.1)'" onmouseout="this.style.boxShadow='none'">
+        <span style="font-size:1.3rem;">▶️</span>
+        <div><p style="font-size:0.83rem;font-weight:600;color:var(--navy);margin-bottom:0.1rem;">APA 7th in Minutes</p><p style="font-size:0.75rem;color:var(--text-muted);">YouTube</p></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=_fVv2Jt0o18" target="_blank" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;background:var(--bg);border-radius:10px;text-decoration:none;border:1px solid var(--border);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(26,35,64,0.1)'" onmouseout="this.style.boxShadow='none'">
+        <span style="font-size:1.3rem;">▶️</span>
+        <div><p style="font-size:0.83rem;font-weight:600;color:var(--navy);margin-bottom:0.1rem;">Introduction to APA 7th Citations</p><p style="font-size:0.75rem;color:var(--text-muted);">YouTube</p></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=CpDTxvxuFpM" target="_blank" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;background:var(--bg);border-radius:10px;text-decoration:none;border:1px solid var(--border);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(26,35,64,0.1)'" onmouseout="this.style.boxShadow='none'">
+        <span style="font-size:1.3rem;">▶️</span>
+        <div><p style="font-size:0.83rem;font-weight:600;color:var(--navy);margin-bottom:0.1rem;">Transition Words &amp; Sentences in Essays</p><p style="font-size:0.75rem;color:var(--text-muted);">3:42 · Scribbr</p></div>
+      </a>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

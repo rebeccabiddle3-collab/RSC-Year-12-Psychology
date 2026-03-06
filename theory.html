@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA2 — 🧠 Theory & Concepts | Redlynch State College</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --teal: #00b4a6;
+    --teal-dark: #008a7e;
+    --coral: #ff6b5b;
+    --yellow: #ffd166;
+    --purple: #7b5ea7;
+    --navy: #1a2340;
+    --navy-light: #253060;
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --text: #1a2340;
+    --text-muted: #5a6480;
+    --border: #dde3f0;
+    --forming: #00b4a6;
+    --finding: #7b5ea7;
+    --analysing: #ff6b5b;
+    --interpreting: #f5a623;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,180,166,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(123,94,167,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 90%, rgba(255,107,91,0.15) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,180,166,0.2);
+    border: 1px solid rgba(0,180,166,0.5);
+    color: var(--teal);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.1rem;
+    font-weight: 300;
+    position: relative;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+  .hero-marks {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .hero-pill strong { color: var(--yellow); }
+
+  /* ── NAV TABS ── */
+  .nav-wrap {
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(26,35,64,0.08);
+  }
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--teal); }
+  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .section { display: block; }
+
+
+  /* ── CHECKPOINT TIMELINE ── */
+  .timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .section-sub { color: var(--text-muted); font-size: 1rem; }
+
+  .timeline {
+    position: relative;
+    padding-left: 3rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--teal), var(--purple), var(--coral), var(--yellow), var(--teal));
+    border-radius: 3px;
+  }
+  .checkpoint {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .checkpoint:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(26,35,64,0.1);
+  }
+  .checkpoint-dot {
+    position: absolute;
+    left: -2.45rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #fff;
+    border: 3px solid var(--bg);
+  }
+  .checkpoint-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .checkpoint-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    color: #fff;
+  }
+  .checkpoint-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .checkpoint h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+  .checkpoint p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .checkpoint-tasks {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .task-chip {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .dates-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .date-item { text-align: center; }
+  .date-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+  .date-val { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+  .date-val.highlight { color: var(--yellow); }
+
+  /* ── WRITING GUIDE ── */
+  .guide-grid { display: grid; gap: 1.5rem; }
+
+  .guide-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .guide-card:hover { box-shadow: 0 8px 28px rgba(26,35,64,0.1); }
+
+  .guide-card-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .guide-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .guide-card-title {
+    flex: 1;
+  }
+  .guide-card-title h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--navy);
+  }
+  .guide-card-title .word-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+  .guide-chevron {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: transform 0.3s;
+  }
+
+
+  .guide-card-body { padding: 0 1.5rem 1.5rem; overflow: visible; }
+
+  .guide-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 1.25rem;
+  }
+
+  .tip-box {
+    background: #f0faf9;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: var(--navy);
+  }
+  .tip-box strong { color: var(--teal-dark); }
+
+  .mark-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    margin: 0.15rem;
+    font-weight: 500;
+  }
+  .mark-good { background: #e6faf8; color: #00856f; border: 1px solid #b3ede7; }
+  .mark-mid  { background: #fff8e6; color: #8a6200; border: 1px solid #ffe9b3; }
+  .mark-low  { background: #fff0ee; color: #c0392b; border: 1px solid #fad5d0; }
+
+  .steps-list { list-style: none; counter-reset: steps; }
+  .steps-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .steps-list li::before {
+    content: counter(steps);
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  .marks-tag-row { margin-top: 0.75rem; }
+  .marks-tag-row p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem; font-weight: 500; }
+
+  /* ── MARKING CRITERIA ── */
+  .criteria-intro {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .crit-summary-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .crit-summary-item .crit-marks {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .crit-summary-item .crit-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .crit-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .crit-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .crit-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+  .crit-title {
+    flex: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .crit-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .crit-table { width: 100%; border-collapse: collapse; }
+  .crit-table th {
+    padding: 0.65rem 1.25rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: left;
+    background: var(--bg);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .crit-table td {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .crit-table tr:last-child td { border-bottom: none; }
+  .score-badge {
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    min-width: 2.5rem;
+    text-align: center;
+    color: #fff;
+  }
+  .score-high { background: #00856f; }
+  .score-mid  { background: #f5a623; }
+  .score-low  { background: #c0392b; }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+  .bullet-list li {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+  .bullet-list li::before {
+    content: '→';
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  /* ── QUICK TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .tip-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+  }
+  .tip-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .tip-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .tip-card p {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* colour helpers */
+  .c-teal   { color: var(--teal); }
+  .c-purple { color: var(--purple); }
+  .c-coral  { color: var(--coral); }
+  .c-yellow { color: var(--yellow); }
+  .bg-teal   { background: var(--teal); }
+  .bg-purple { background: var(--purple); }
+  .bg-coral  { background: var(--coral); }
+  .bg-yellow { background: var(--yellow); }
+  .light-teal   { background: #e0f7f5; color: var(--teal-dark); }
+  .light-purple { background: #f0ecfa; color: var(--purple); }
+  .light-coral  { background: #fff0ee; color: #c0392b; }
+  .light-yellow { background: #fff8e0; color: #8a6200; }
+
+  /* ── GLOSSARY ── */
+  .gloss-filter-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .gloss-filter {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-muted);
+  }
+  .gloss-filter:hover, .gloss-filter.active { border-color: var(--teal); color: var(--teal); background: #e0f7f5; }
+  .gloss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .gloss-card {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    padding: 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+  .gloss-card:hover { box-shadow: 0 6px 20px rgba(26,35,64,0.09); }
+  .gloss-term {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .gloss-crit-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.6rem;
+    color: #fff;
+  }
+  .gloss-def {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .gloss-level {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.25rem;
+  }
+  .level-high { background: #e6faf8; color: #00856f; }
+  .level-mid  { background: #fff8e6; color: #8a6200; }
+  .level-low  { background: #fff0ee; color: #c0392b; }
+
+  /* ── CHECKLIST ── */
+  .checklist-progress {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .progress-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .progress-bar-wrap {
+    background: var(--bg);
+    border-radius: 100px;
+    height: 14px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+    border-radius: 100px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .progress-count {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .progress-count span { color: var(--teal); }
+
+  .checklist-section {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+  .cl-section-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cl-section-icon {
+    width: 2rem; height: 2rem;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .cl-section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    flex: 1;
+  }
+  .cl-section-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .cl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .cl-item:last-child { border-bottom: none; }
+  .cl-item:hover { background: var(--bg); }
+  .cl-item.checked { background: #f0faf9; }
+  .cl-checkbox {
+    width: 1.35rem; height: 1.35rem;
+    border-radius: 6px;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    background: var(--white);
+  }
+  .cl-item.checked .cl-checkbox {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .cl-checkbox-tick {
+    color: #fff;
+    font-size: 0.75rem;
+    display: none;
+  }
+  .cl-item.checked .cl-checkbox-tick { display: block; }
+  .cl-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .cl-item.checked .cl-text {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--teal);
+  }
+
+  /* responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem 3rem; }
+    .container { padding: 1.5rem 1rem; }
+    .crit-table th, .crit-table td { padding: 0.65rem 0.85rem; }
+    .gloss-grid { grid-template-columns: 1fr; }
+  }
+
+  .nav-link { flex-shrink:0; padding:1rem 1.25rem; display:inline-block; text-decoration:none;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:0.82rem; font-weight:600;
+    color:var(--text-muted); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; }
+  .nav-link:hover { color:var(--teal); }
+  .nav-link.active { color:var(--teal); border-bottom-color:var(--teal); }
+  .guide-chevron { display:none; }
+  .guide-card-header { cursor:default; }
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge">Redlynch State College · 2025–2026</div>
+  <h1>Psychology <span>IA2</span><br>Student Guide</h1>
+  <p class="hero-sub">Everything you need to write your Student Experiment report — step by step.</p>
+  <div class="hero-marks">
+    <span class="hero-pill">📋 Student Experiment</span>
+    <span class="hero-pill">📝 Up to <strong>2000 words</strong></span>
+    <span class="hero-pill">⭐ Worth <strong>20%</strong></span>
+    <span class="hero-pill">⏱ ~10 hours class time</span>
+  </div>
+</div>
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <a href="index.html" class="nav-link">📅 Checkpoints</a>
+    <a href="writing.html" class="nav-link">✍️ Writing Guide</a>
+    <a href="marking.html" class="nav-link">🎯 Marking Criteria</a>
+    <a href="theory.html" class="nav-link active">🧠 Theory & Concepts</a>
+    <a href="glossary.html" class="nav-link">📖 Glossary</a>
+    <a href="checklist.html" class="nav-link">☑️ Checklist</a>
+    <a href="apa.html" class="nav-link">🔖 APA Guide</a>
+    <a href="tips.html" class="nav-link">💡 Quick Tips</a>
+  </div>
+</div>
+<div class="container">
+<div class="container">
+
+  <div class="timeline-header">
+    <h2 class="section-title">Theory &amp; Concepts</h2>
+    <p class="section-sub">The psychological knowledge that underpins your experiment — variables, limitations, uncertainty, reliability and validity.</p>
+  </div>
+
+  <!-- GRANT ET AL STUDY SUMMARY -->
+  <div style="background:var(--white);border-radius:16px;border:2px solid var(--teal);padding:1.75rem 2rem;margin-bottom:2rem;">
+    <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+      <div style="flex:1;min-width:250px;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.5rem;">The Original Study</p>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem;">Grant, H. M., Bredahl, L. C., Clay, J., Ferrie, J., Groves, J. E., McDorman, T. A., &amp; Dark, V. J. (1998)</h3>
+        <p style="font-size:0.85rem;font-style:italic;color:var(--text-muted);margin-bottom:1rem;">Context-dependent memory for meaningful material: Information for students. <em>Applied Cognitive Psychology, 12</em>, 617–623.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;font-size:0.84rem;">
+          <div><span style="font-weight:600;color:var(--navy);">Participants:</span> <span style="color:var(--text-muted);">39 participants (17F, 23M), age 17–56, M = 23.4</span></div>
+          <div><span style="font-weight:600;color:var(--navy);">Design:</span> <span style="color:var(--text-muted);">Between-subjects factorial (2×2)</span></div>
+          <div><span style="font-weight:600;color:var(--navy);">IV 1:</span> <span style="color:var(--text-muted);">Study context (silent vs noisy)</span></div>
+          <div><span style="font-weight:600;color:var(--navy);">IV 2:</span> <span style="color:var(--text-muted);">Test context (silent vs noisy)</span></div>
+          <div><span style="font-weight:600;color:var(--navy);">DV:</span> <span style="color:var(--text-muted);">Score on short-answer (out of 10) and multiple-choice test (out of 16)</span></div>
+          <div><span style="font-weight:600;color:var(--navy);">Material:</span> <span style="color:var(--text-muted);">Two-page article on psychoimmunology</span></div>
+        </div>
+      </div>
+      <div style="background:#e0f7f5;border-radius:12px;padding:1.25rem;min-width:220px;max-width:320px;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--teal-dark);margin-bottom:0.6rem;">Key Results</p>
+        <ul style="list-style:none;padding:0;font-size:0.84rem;color:var(--navy);line-height:1.7;">
+          <li>✅ Matching conditions outperformed mismatching on <strong>both</strong> test types</li>
+          <li>✅ Short-answer: silent/silent M=6.7, noisy/noisy M=6.2 vs mismatching M≈5.0</li>
+          <li>✅ Multiple-choice: matching M=14.3 vs mismatching M=12.7</li>
+          <li>✅ Significant Study × Test interaction for both tests (<em>p</em> &lt; .05)</li>
+          <li>⚠️ No overall main effect of noise on performance</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--teal-dark);margin-top:0.75rem;font-style:italic;">Conclusion: students may perform better on exams by studying in silence.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PSYCHOLOGICAL THEORY BANNER -->
+  <div style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:16px;padding:1.75rem 2rem;margin-bottom:2rem;">
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Why theory matters in your report</p>
+    <p style="color:rgba(255,255,255,0.85);font-size:0.92rem;line-height:1.7;max-width:800px;">Your report isn't just about your data — it must connect your findings to <strong style="color:#fff;">established psychological theory</strong>. Examiners expect you to explain <em>why</em> your results make sense in light of what psychologists already know. Every section — rationale, discussion, conclusion — should reference relevant theory.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+      <span style="background:rgba(0,180,166,0.25);border:1px solid rgba(0,180,166,0.5);color:var(--teal);padding:0.3rem 0.8rem;border-radius:100px;font-size:0.78rem;font-weight:600;">Context-Dependent Memory (Grant et al., 1998)</span>
+      <span style="background:rgba(123,94,167,0.25);border:1px solid rgba(123,94,167,0.5);color:#b39ddb;padding:0.3rem 0.8rem;border-radius:100px;font-size:0.78rem;font-weight:600;">Encoding Specificity (Tulving &amp; Thomson, 1973)</span>
+      <span style="background:rgba(255,107,91,0.2);border:1px solid rgba(255,107,91,0.4);color:#ff9d91;padding:0.3rem 0.8rem;border-radius:100px;font-size:0.78rem;font-weight:600;">Environmental Context Effects</span>
+      <span style="background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.4);color:var(--yellow);padding:0.3rem 0.8rem;border-radius:100px;font-size:0.78rem;font-weight:600;">Memory Systems (Atkinson &amp; Shiffrin, 1968)</span>
+      <span style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:0.3rem 0.8rem;border-radius:100px;font-size:0.78rem;font-weight:600;">Working Memory (Baddeley)</span>
+    </div>
+  </div>
+
+  <!-- CORE THEORY -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-teal">🧩</div>
+      <div class="guide-card-title">
+        <h3>Key Psychological Theories to Connect</h3>
+        <div class="word-count">Use these in your Rationale and Discussion</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="display:grid;gap:0.85rem;">
+
+        <div style="background:#e0f7f5;border-radius:12px;padding:1.1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.9rem;color:var(--teal-dark);margin-bottom:0.4rem;">Context-Dependent Memory (Grant et al., 1998)</p>
+          <p style="font-size:0.87rem;color:var(--text);line-height:1.6;">Memory performance is better when the environment at <em>retrieval</em> matches the environment at <em>encoding</em> — this is the context-dependency effect. Grant et al. (1998) demonstrated this using meaningful prose (a two-page article) read in silent or noisy conditions, with recall and recognition tests given in matching or mismatching conditions. Both test types showed superior performance in matching conditions. This is the central finding your modification builds upon.</p>
+          <p style="font-size:0.82rem;color:var(--teal-dark);margin-top:0.5rem;font-style:italic;">→ Connect this in your Rationale (Para 2–3), Discussion (link results to context-dependency), and Conclusion.</p>
+        </div>
+
+        <div style="background:#f0ecfa;border-radius:12px;padding:1.1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.9rem;color:var(--purple);margin-bottom:0.4rem;">Encoding Specificity Principle (Tulving &amp; Thomson, 1973)</p>
+          <p style="font-size:0.87rem;color:var(--text);line-height:1.6;">Retrieval is most effective when the cues available at retrieval closely match those present during encoding. Environmental context (e.g. background noise or silence) is encoded as part of the memory trace. If the same contextual cues are present at both study and test, retrieval is enhanced — explaining why matching conditions outperform mismatching conditions in Grant et al. (1998).</p>
+          <p style="font-size:0.82rem;color:var(--purple);margin-top:0.5rem;font-style:italic;">→ Use this in your Rationale to explain <em>why</em> context-dependency occurs, and in Discussion to interpret your results.</p>
+        </div>
+
+        <div style="background:#fff0ee;border-radius:12px;padding:1.1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.9rem;color:#c0392b;margin-bottom:0.4rem;">Encoding &amp; Retrieval</p>
+          <p style="font-size:0.87rem;color:var(--text);line-height:1.6;"><strong>Encoding</strong> converts information into a memory trace — including contextual features like background noise. <strong>Retrieval</strong> is accessing stored information. The better the match between encoding and retrieval contexts, the stronger the retrieval cues. In Grant et al. (1998), background noise (or silence) was inadvertently encoded as part of the memory trace, helping or hindering later retrieval depending on whether the test environment matched.</p>
+          <p style="font-size:0.82rem;color:#c0392b;margin-top:0.5rem;font-style:italic;">→ Use when explaining why your IV (e.g. study environment) affects the DV (e.g. test score).</p>
+        </div>
+
+        <div style="background:#fff8e0;border-radius:12px;padding:1.1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.9rem;color:#8a6200;margin-bottom:0.4rem;">Multi-Store Model of Memory (Atkinson &amp; Shiffrin, 1968)</p>
+          <p style="font-size:0.87rem;color:var(--text);line-height:1.6;">Memory is divided into three stores: <strong>sensory memory</strong> (brief, automatic), <strong>short-term memory</strong> (limited capacity ~7±2 items, ~30s duration without rehearsal), and <strong>long-term memory</strong> (unlimited capacity, long duration). Information moves between stores through attention and rehearsal.</p>
+          <p style="font-size:0.82rem;color:#8a6200;margin-top:0.5rem;font-style:italic;">→ Use as background theory in your Rationale (Para 1–2) when defining memory.</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:12px;padding:1.1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;">Working Memory Model (Baddeley &amp; Hitch, 1974)</p>
+          <p style="font-size:0.87rem;color:var(--text);line-height:1.6;">Replaces the concept of short-term memory with a more complex system: a <strong>central executive</strong> (attention controller), <strong>phonological loop</strong> (verbal/auditory info), <strong>visuospatial sketchpad</strong> (visual/spatial info), and <strong>episodic buffer</strong> (integrates information). Relevant if your modification involves verbal vs visual stimuli or different modalities.</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.5rem;font-style:italic;">→ Use if your modification changes stimulus type or involves a concurrent task.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIABLES -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-purple">⚗️</div>
+      <div class="guide-card-title">
+        <h3>Types of Variables</h3>
+        <div class="word-count">Must operationalise IV and DV in your Method and RQ</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="display:grid;gap:0.75rem;margin-bottom:1rem;">
+
+        <div style="background:#e0f7f5;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--teal-dark);margin-bottom:0.3rem;">Independent Variable (IV)</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">The variable you <strong>deliberately manipulate</strong>. It has at least two levels/conditions. Must be operationalised — state exactly what each condition involves.</p>
+          <p style="font-size:0.82rem;color:var(--teal-dark);margin-top:0.4rem;font-style:italic;">Example: Study environment (silent vs noisy conditions during reading)</p>
+        </div>
+
+        <div style="background:#f0ecfa;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--purple);margin-bottom:0.3rem;">Dependent Variable (DV)</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">The variable you <strong>measure</strong> — what you expect to change as a result of manipulating the IV. Must be operationalised — state exactly how it is measured and in what units.</p>
+          <p style="font-size:0.82rem;color:var(--purple);margin-top:0.4rem;font-style:italic;">Example: Number of items correctly answered on a short-answer or multiple-choice test</p>
+        </div>
+
+        <div style="background:#fff0ee;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:#c0392b;margin-bottom:0.3rem;">Extraneous Variables (EVs)</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">Any variable <strong>other than the IV</strong> that could potentially affect the DV. Must be <strong>identified and controlled before</strong> data collection. If not controlled, they become confounding variables.</p>
+          <p style="font-size:0.82rem;color:#c0392b;margin-top:0.4rem;font-style:italic;">Examples: reading time, participant age, prior familiarity with the article topic, headphone volume</p>
+        </div>
+
+        <div style="background:#fff8e0;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:#8a6200;margin-bottom:0.3rem;">Confounding Variables</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">Extraneous variables that <strong>were not controlled</strong> and therefore <em>did</em> affect the DV alongside the IV. Identified after data collection. Lower internal validity because you can no longer be confident the IV caused the change in the DV.</p>
+          <p style="font-size:0.82rem;color:#8a6200;margin-top:0.4rem;font-style:italic;">Example: participants in one condition happened to be more rested than those in the other</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);margin-bottom:0.3rem;">Control Variables</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">Variables that are deliberately <strong>kept constant</strong> across conditions to prevent them from becoming confounds. List these in your Method (Design &amp; Variables section).</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.4rem;font-style:italic;">Examples: same article, same headphones, same instructions read aloud, same time allowed</p>
+        </div>
+
+      </div>
+      <div class="tip-box"><strong>Levels of measurement matter for statistics:</strong> Nominal (categories, e.g. male/female) → Ordinal (ranked order) → Interval (equal gaps, no true zero) → Ratio (equal gaps + true zero, e.g. number of words recalled). The type of data you collect determines which statistical test is appropriate.</div>
+    </div>
+  </div>
+
+  <!-- RESEARCH DESIGN -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-teal">🔀</div>
+      <div class="guide-card-title">
+        <h3>Research Designs</h3>
+        <div class="word-count">State and justify your design in the Method</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div style="display:grid;gap:0.75rem;">
+        <div style="background:#e0f7f5;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--teal-dark);margin-bottom:0.3rem;">Repeated Measures (Within-participants)</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">Each participant experiences <em>all</em> conditions. <strong>Advantages:</strong> controls participant variables; requires fewer participants. <strong>Disadvantages:</strong> risk of order effects (practice/fatigue). <strong>Control:</strong> counterbalancing.</p>
+        </div>
+        <div style="background:#f0ecfa;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--purple);margin-bottom:0.3rem;">Independent Groups (Between-participants)</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">Different participants in each condition. <strong>Advantages:</strong> no order effects. <strong>Disadvantages:</strong> participant variables may differ between groups; needs more participants. <strong>Control:</strong> random allocation.</p>
+        </div>
+        <div style="background:#fff0ee;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:#c0392b;margin-bottom:0.3rem;">Matched Participants</p>
+          <p style="font-size:0.86rem;color:var(--text);line-height:1.55;">Participants are paired based on a relevant characteristic (e.g. age, prior memory score) and one from each pair is assigned to each condition. Balances participant variables without order effects.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIMITATIONS -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-coral">⚠️</div>
+      <div class="guide-card-title">
+        <h3>Types of Limitations</h3>
+        <div class="word-count">Identify → Describe → Evaluate → Improve</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div class="tip-box"><strong>Structure for every limitation:</strong> (1) <strong>Identify</strong> it by name, (2) <strong>Describe</strong> how it appeared in your study, (3) <strong>Evaluate</strong> the effect on reliability or validity, (4) <strong>Improve</strong> — suggest a specific solution.</div>
+      <div style="display:grid;gap:0.75rem;margin-top:0.75rem;">
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Sample Bias</p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ External (population) validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;"><strong>What:</strong> Sample doesn't accurately represent the target population (e.g. only students from one year level, one school, one gender). Caused by convenience or volunteer sampling. <strong>Improve:</strong> Use random or stratified sampling.</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Order Effects <span style="font-weight:400;font-size:0.78rem;color:var(--text-muted)">(repeated measures only)</span></p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ Internal validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;"><strong>Practice effect:</strong> performance improves simply from doing the task a second time. <strong>Fatigue/boredom effect:</strong> performance worsens in the second condition due to tiredness. Both are confounding variables. <strong>Improve:</strong> counterbalancing (half do Condition A then B; half do B then A).</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Demand Characteristics</p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ Internal validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">Participants guess the aim of the experiment and alter their behaviour accordingly (either trying to help or sabotage the hypothesis). <strong>Improve:</strong> single-blind procedure (participants don't know which condition they're in); ethical deception with debriefing.</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Lack of Mundane Realism</p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ External validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">The memory task is artificial — memorising a list of words is unlike how memory is used in everyday life. Limits ecological validity. <strong>Improve:</strong> use more naturalistic stimuli (e.g. meaningful sentences, images, stories).</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Participant Variables</p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ Internal validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">Individual differences between participants (age, prior memory ability, fatigue, anxiety) that may influence the DV. Most problematic in independent groups designs. <strong>Improve:</strong> random allocation to groups; matched participants design.</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Situational / Environmental Effects</p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ Internal validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">Uncontrolled environmental factors (noise, lighting, distractions) that vary between conditions or testing sessions and may affect performance. <strong>Improve:</strong> conduct study in a controlled lab-like setting; standardise the testing environment.</p>
+        </div>
+
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--navy);">Ceiling / Floor Effect</p>
+            <span style="font-size:0.72rem;background:#fff0ee;color:#c0392b;padding:0.15rem 0.5rem;border-radius:5px;font-weight:600;">↓ Internal validity</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;"><strong>Ceiling:</strong> task too easy — most participants score near the maximum, so differences can't be detected. <strong>Floor:</strong> task too hard — most score near zero. Both produce skewed distributions and prevent the DV from accurately reflecting the IV's effect. <strong>Improve:</strong> pilot test the stimulus difficulty; adjust word list length or task complexity.</p>
+        </div>
+
+      </div>
+
+      <div style="margin-top:1rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Useful sentence starters:</p>
+        <div style="display:grid;gap:0.4rem;">
+          <div style="background:#f0ecfa;border-radius:7px;padding:0.6rem 0.85rem;font-size:0.83rem;font-style:italic;color:var(--navy);">"There may be some possible limitations in this study."</div>
+          <div style="background:#f0ecfa;border-radius:7px;padding:0.6rem 0.85rem;font-size:0.83rem;font-style:italic;color:var(--navy);">"The findings of this study have to be seen in light of some limitations."</div>
+          <div style="background:#f0ecfa;border-radius:7px;padding:0.6rem 0.85rem;font-size:0.83rem;font-style:italic;color:var(--navy);">"This research is subject to several limitations. First… Second…"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNCERTAINTY & ERROR -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-yellow">📉</div>
+      <div class="guide-card-title">
+        <h3>Uncertainty &amp; Types of Error</h3>
+        <div class="word-count">Discuss in Results and Discussion using data values</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+      <div class="tip-box"><strong>Uncertainty</strong> = ambiguity that remains in your findings even after analysis. It doesn't mean your results are wrong — it means you acknowledge the limits of how confident you can be. Always reference specific SD values, confidence intervals, or error bar overlap.</div>
+
+      <div style="display:grid;gap:0.75rem;margin-top:0.75rem;margin-bottom:1rem;">
+
+        <div style="background:#e0f7f5;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--teal-dark);margin-bottom:0.3rem;">Random Error</p>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">Unpredictable, unsystematic fluctuations that affect results differently each time. Affects <strong>precision</strong> and <strong>internal reliability</strong>. Caused by: instrument limitations, environmental variations, inconsistent procedure. <strong>Reduce by:</strong> larger sample size, repeated measurements, standardised procedure.</p>
+        </div>
+
+        <div style="background:#fff0ee;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:#c0392b;margin-bottom:0.3rem;">Systematic Error</p>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">Consistent deviation from the true value in the same direction every time. Affects <strong>accuracy</strong> and <strong>internal validity</strong>. Caused by: flawed instruments, experimenter bias, environmental interference. <strong>Reduce by:</strong> knowing instrument limitations; calibrating tools; double-blind procedure.</p>
+        </div>
+
+        <div style="background:#fff8e0;border-radius:10px;padding:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.87rem;color:#8a6200;margin-bottom:0.3rem;">Personal Error</p>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.55;">Mistakes or miscalculations made by the researcher (e.g. misreading a score, timing error). <strong>Should NOT be included in your data</strong> — if identified, redo that part of the experiment. Do not report personal errors as limitations.</p>
+        </div>
+
+      </div>
+
+      <div style="background:var(--bg);border-radius:10px;padding:1rem;margin-bottom:0.75rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;">Writing about uncertainty — use this template:</p>
+        <p style="font-size:0.85rem;color:var(--navy);line-height:1.7;font-style:italic;">"The [condition] scores had a greater dispersion (<em>SD</em> = __) than the [condition] scores (<em>SD</em> = __), which increases the uncertainty of the results for the [condition] group and reduces confidence in conclusions drawn about that condition."</p>
+      </div>
+
+      <div style="background:var(--bg);border-radius:10px;padding:1rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;">Writing about error bars and confidence intervals:</p>
+        <ul class="steps-list">
+          <li>If error bars <strong>do not overlap</strong> → suggests a statistically significant difference between conditions</li>
+          <li>If error bars <strong>overlap considerably</strong> → suggests the difference between conditions may not be significant</li>
+          <li>Wider error bars = greater variability in that condition = more uncertainty</li>
+          <li>Always link your comment about error bars back to your p-value</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELIABILITY & VALIDITY -->
+  <div class="guide-card" onclick="toggleCard(this)" style="margin-bottom:1rem;">
+    <div class="guide-card-header">
+      <div class="guide-icon light-purple">⚖️</div>
+      <div class="guide-card-title">
+        <h3>Reliability &amp; Validity — Four Types Each</h3>
+        <div class="word-count">Discuss all four types with strengths AND weaknesses</div>
+      </div>
+      <span class="guide-chevron">▼</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="guide-divider"></div>
+
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Reliability — the extent to which results are consistent across repeated measurements</p>
+      <div style="display:grid;gap:0.6rem;margin-bottom:1.25rem;">
+        <div style="background:#f0ecfa;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:var(--purple);margin-bottom:0.3rem;">External Reliability — Replicability</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">Can the same results be obtained by repeating the experiment under identical conditions? High replicability = high reliability. <em>Improve:</em> standardised procedure, clear operationalisation of variables.</p>
+        </div>
+        <div style="background:#f0ecfa;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:var(--purple);margin-bottom:0.3rem;">External Reliability — Test-Retest</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">Repeat the same test on the same participants after a period of time — a reliable instrument produces similar scores. Psychology tests are susceptible to mood, fatigue, and context changes. <em>Improve:</em> use precise, standardised instruments.</p>
+        </div>
+        <div style="background:#f0ecfa;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:var(--purple);margin-bottom:0.3rem;">External Reliability — Inter-Rater Reliability</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">Consistency of ratings across different observers. Relevant if your study involves subjective scoring or observation. <em>Improve:</em> train raters; use a detailed scoring rubric; clearly operationalise variables.</p>
+        </div>
+        <div style="background:#f0ecfa;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:var(--purple);margin-bottom:0.3rem;">Internal Reliability — Internal Consistency</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">All items or measures in an instrument consistently assess the same construct. Random errors reduce internal consistency. <em>Improve:</em> use well-validated instruments; ensure word list items are equivalent in difficulty.</p>
+        </div>
+      </div>
+
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Validity — the extent to which the study measures what it claims to measure</p>
+      <div style="display:grid;gap:0.6rem;">
+        <div style="background:#fff0ee;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:#c0392b;margin-bottom:0.3rem;">Internal Validity</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">The extent to which changes in the DV were caused by the IV and not by confounding variables. High internal validity means you can be confident the IV <em>caused</em> the effect. <em>Threats:</em> confounding variables, order effects, demand characteristics, investigator effects.</p>
+        </div>
+        <div style="background:#fff0ee;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:#c0392b;margin-bottom:0.3rem;">External Validity — Population Validity</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">Can findings generalise to people outside the sample? A convenience sample from one school limits generalisation to broader populations. <em>Improve:</em> random or stratified sampling; larger sample.</p>
+        </div>
+        <div style="background:#fff0ee;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:#c0392b;margin-bottom:0.3rem;">External Validity — Ecological Validity</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">Can findings generalise to real-world settings? Lab-based memory tasks may not reflect how memory works in everyday life. <em>Improve:</em> use naturalistic stimuli; conduct study in participants' normal environment.</p>
+        </div>
+        <div style="background:#fff0ee;border-radius:9px;padding:0.85rem;">
+          <p style="font-size:0.85rem;font-weight:600;color:#c0392b;margin-bottom:0.3rem;">Mundane Realism</p>
+          <p style="font-size:0.83rem;color:var(--text);line-height:1.5;">The degree to which the experimental task resembles real-life activities. Low mundane realism limits ecological validity. Memorising a word list under laboratory conditions has low mundane realism. <em>Improve:</em> use tasks that reflect everyday memory demands.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTING THEORY TO YOUR REPORT -->
+  <div style="background:var(--white);border-radius:16px;border:1.5px solid var(--border);padding:1.5rem;">
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:1rem;">🔗 Where to connect theory in your report</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;">
+      <div style="background:#e0f7f5;border-radius:10px;padding:0.9rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal-dark);margin-bottom:0.4rem;">② Rationale</p>
+        <p style="font-size:0.82rem;color:var(--text);line-height:1.5;">Define context-dependent memory and encoding specificity. Explain how Grant et al. (1998) demonstrated the context-dependency effect and why your modification extends or refines it.</p>
+      </div>
+      <div style="background:#f0ecfa;border-radius:10px;padding:0.9rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:var(--purple);margin-bottom:0.4rem;">④ Method</p>
+        <p style="font-size:0.82rem;color:var(--text);line-height:1.5;">Link your choice of IV and DV to theory — explain <em>why</em> manipulating this variable should affect memory, based on context-dependent memory and encoding specificity.</p>
+      </div>
+      <div style="background:#fff0ee;border-radius:10px;padding:0.9rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:#c0392b;margin-bottom:0.4rem;">⑥ Discussion</p>
+        <p style="font-size:0.82rem;color:var(--text);line-height:1.5;">Explain whether your results support or contradict the context-dependency effect. Link directly to Grant et al. (1998) — did your matching conditions outperform your mismatching conditions? If not, discuss why.</p>
+      </div>
+      <div style="background:#fff8e0;border-radius:10px;padding:0.9rem;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:#8a6200;margin-bottom:0.4rem;">⑦ Conclusion</p>
+        <p style="font-size:0.82rem;color:var(--text);line-height:1.5;">Explicitly state whether your findings support or challenge the theoretical framework. Don't just answer the RQ — situate it within the broader psychology of memory.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════ GLOSSARY ═══════════════════════════════ -->
+</div>
+</body>
+</html>

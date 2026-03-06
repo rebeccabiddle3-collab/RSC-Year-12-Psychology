@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA2 — ✍️ Writing Guide | Redlynch State College</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --teal: #00b4a6;
+    --teal-dark: #008a7e;
+    --coral: #ff6b5b;
+    --yellow: #ffd166;
+    --purple: #7b5ea7;
+    --navy: #1a2340;
+    --navy-light: #253060;
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --text: #1a2340;
+    --text-muted: #5a6480;
+    --border: #dde3f0;
+    --forming: #00b4a6;
+    --finding: #7b5ea7;
+    --analysing: #ff6b5b;
+    --interpreting: #f5a623;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,180,166,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(123,94,167,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 90%, rgba(255,107,91,0.15) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,180,166,0.2);
+    border: 1px solid rgba(0,180,166,0.5);
+    color: var(--teal);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.1rem;
+    font-weight: 300;
+    position: relative;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+  .hero-marks {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .hero-pill strong { color: var(--yellow); }
+
+  /* ── NAV TABS ── */
+  .nav-wrap {
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(26,35,64,0.08);
+  }
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--teal); }
+  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .section { display: block; }
+
+
+  /* ── CHECKPOINT TIMELINE ── */
+  .timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .section-sub { color: var(--text-muted); font-size: 1rem; }
+
+  .timeline {
+    position: relative;
+    padding-left: 3rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--teal), var(--purple), var(--coral), var(--yellow), var(--teal));
+    border-radius: 3px;
+  }
+  .checkpoint {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .checkpoint:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(26,35,64,0.1);
+  }
+  .checkpoint-dot {
+    position: absolute;
+    left: -2.45rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #fff;
+    border: 3px solid var(--bg);
+  }
+  .checkpoint-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .checkpoint-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    color: #fff;
+  }
+  .checkpoint-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .checkpoint h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+  .checkpoint p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .checkpoint-tasks {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .task-chip {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .dates-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .date-item { text-align: center; }
+  .date-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+  .date-val { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+  .date-val.highlight { color: var(--yellow); }
+
+  /* ── WRITING GUIDE ── */
+  .guide-grid { display: grid; gap: 1.5rem; }
+
+  .guide-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .guide-card:hover { box-shadow: 0 8px 28px rgba(26,35,64,0.1); }
+
+  .guide-card-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .guide-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .guide-card-title {
+    flex: 1;
+  }
+  .guide-card-title h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--navy);
+  }
+  .guide-card-title .word-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+  .guide-chevron {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: transform 0.3s;
+  }
+
+
+  .guide-card-body { padding: 0 1.5rem 1.5rem; overflow: visible; }
+
+  .guide-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 1.25rem;
+  }
+
+  .tip-box {
+    background: #f0faf9;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: var(--navy);
+  }
+  .tip-box strong { color: var(--teal-dark); }
+
+  .mark-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    margin: 0.15rem;
+    font-weight: 500;
+  }
+  .mark-good { background: #e6faf8; color: #00856f; border: 1px solid #b3ede7; }
+  .mark-mid  { background: #fff8e6; color: #8a6200; border: 1px solid #ffe9b3; }
+  .mark-low  { background: #fff0ee; color: #c0392b; border: 1px solid #fad5d0; }
+
+  .steps-list { list-style: none; counter-reset: steps; }
+  .steps-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .steps-list li::before {
+    content: counter(steps);
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  .marks-tag-row { margin-top: 0.75rem; }
+  .marks-tag-row p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem; font-weight: 500; }
+
+  /* ── MARKING CRITERIA ── */
+  .criteria-intro {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .crit-summary-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .crit-summary-item .crit-marks {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .crit-summary-item .crit-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .crit-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .crit-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .crit-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+  .crit-title {
+    flex: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .crit-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .crit-table { width: 100%; border-collapse: collapse; }
+  .crit-table th {
+    padding: 0.65rem 1.25rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: left;
+    background: var(--bg);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .crit-table td {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .crit-table tr:last-child td { border-bottom: none; }
+  .score-badge {
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    min-width: 2.5rem;
+    text-align: center;
+    color: #fff;
+  }
+  .score-high { background: #00856f; }
+  .score-mid  { background: #f5a623; }
+  .score-low  { background: #c0392b; }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+  .bullet-list li {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+  .bullet-list li::before {
+    content: '→';
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  /* ── QUICK TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .tip-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+  }
+  .tip-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .tip-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .tip-card p {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* colour helpers */
+  .c-teal   { color: var(--teal); }
+  .c-purple { color: var(--purple); }
+  .c-coral  { color: var(--coral); }
+  .c-yellow { color: var(--yellow); }
+  .bg-teal   { background: var(--teal); }
+  .bg-purple { background: var(--purple); }
+  .bg-coral  { background: var(--coral); }
+  .bg-yellow { background: var(--yellow); }
+  .light-teal   { background: #e0f7f5; color: var(--teal-dark); }
+  .light-purple { background: #f0ecfa; color: var(--purple); }
+  .light-coral  { background: #fff0ee; color: #c0392b; }
+  .light-yellow { background: #fff8e0; color: #8a6200; }
+
+  /* ── GLOSSARY ── */
+  .gloss-filter-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .gloss-filter {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-muted);
+  }
+  .gloss-filter:hover, .gloss-filter.active { border-color: var(--teal); color: var(--teal); background: #e0f7f5; }
+  .gloss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .gloss-card {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    padding: 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+  .gloss-card:hover { box-shadow: 0 6px 20px rgba(26,35,64,0.09); }
+  .gloss-term {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .gloss-crit-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.6rem;
+    color: #fff;
+  }
+  .gloss-def {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .gloss-level {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.25rem;
+  }
+  .level-high { background: #e6faf8; color: #00856f; }
+  .level-mid  { background: #fff8e6; color: #8a6200; }
+  .level-low  { background: #fff0ee; color: #c0392b; }
+
+  /* ── CHECKLIST ── */
+  .checklist-progress {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .progress-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .progress-bar-wrap {
+    background: var(--bg);
+    border-radius: 100px;
+    height: 14px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+    border-radius: 100px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .progress-count {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .progress-count span { color: var(--teal); }
+
+  .checklist-section {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+  .cl-section-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cl-section-icon {
+    width: 2rem; height: 2rem;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .cl-section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    flex: 1;
+  }
+  .cl-section-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .cl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .cl-item:last-child { border-bottom: none; }
+  .cl-item:hover { background: var(--bg); }
+  .cl-item.checked { background: #f0faf9; }
+  .cl-checkbox {
+    width: 1.35rem; height: 1.35rem;
+    border-radius: 6px;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    background: var(--white);
+  }
+  .cl-item.checked .cl-checkbox {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .cl-checkbox-tick {
+    color: #fff;
+    font-size: 0.75rem;
+    display: none;
+  }
+  .cl-item.checked .cl-checkbox-tick { display: block; }
+  .cl-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .cl-item.checked .cl-text {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--teal);
+  }
+
+  /* responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem 3rem; }
+    .container { padding: 1.5rem 1rem; }
+    .crit-table th, .crit-table td { padding: 0.65rem 0.85rem; }
+    .gloss-grid { grid-template-columns: 1fr; }
+  }
+
+  .nav-link { flex-shrink:0; padding:1rem 1.25rem; display:inline-block; text-decoration:none;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:0.82rem; font-weight:600;
+    color:var(--text-muted); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; }
+  .nav-link:hover { color:var(--teal); }
+  .nav-link.active { color:var(--teal); border-bottom-color:var(--teal); }
+  .guide-chevron { display:none; }
+  .guide-card-header { cursor:default; }
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge">Redlynch State College · 2025–2026</div>
+  <h1>Psychology <span>IA2</span><br>Student Guide</h1>
+  <p class="hero-sub">Everything you need to write your Student Experiment report — step by step.</p>
+  <div class="hero-marks">
+    <span class="hero-pill">📋 Student Experiment</span>
+    <span class="hero-pill">📝 Up to <strong>2000 words</strong></span>
+    <span class="hero-pill">⭐ Worth <strong>20%</strong></span>
+    <span class="hero-pill">⏱ ~10 hours class time</span>
+  </div>
+</div>
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <a href="index.html" class="nav-link">📅 Checkpoints</a>
+    <a href="writing.html" class="nav-link active">✍️ Writing Guide</a>
+    <a href="marking.html" class="nav-link">🎯 Marking Criteria</a>
+    <a href="theory.html" class="nav-link">🧠 Theory & Concepts</a>
+    <a href="glossary.html" class="nav-link">📖 Glossary</a>
+    <a href="checklist.html" class="nav-link">☑️ Checklist</a>
+    <a href="apa.html" class="nav-link">🔖 APA Guide</a>
+    <a href="tips.html" class="nav-link">💡 Quick Tips</a>
+  </div>
+</div>
+<div class="container">
+<div class="container">
+
+  <div class="timeline-header">
+    <h2 class="section-title">Writing Guide</h2>
+    <p class="section-sub">Click each section to expand — what to write, word targets, structure, and marking language.</p>
+  </div>
+
+  <!-- REPORT AT A GLANCE -->
+  <div style="background:var(--navy);border-radius:16px;padding:1.5rem;margin-bottom:2rem;overflow-x:auto;">
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Report structure at a glance</p>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+      <div style="background:rgba(0,180,166,0.2);border:1px solid rgba(0,180,166,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:var(--teal);margin-bottom:0.2rem;">① Title</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">5–10 words</div>
+      </div>
+      <div style="background:rgba(0,180,166,0.2);border:1px solid rgba(0,180,166,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:var(--teal);margin-bottom:0.2rem;">② Rationale</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">200–250 w</div>
+      </div>
+      <div style="background:rgba(0,180,166,0.2);border:1px solid rgba(0,180,166,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:var(--teal);margin-bottom:0.2rem;">③ RQ + Hyp</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">50–100 w</div>
+      </div>
+      <div style="background:rgba(123,94,167,0.2);border:1px solid rgba(123,94,167,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:#b39ddb;margin-bottom:0.2rem;">④ Method</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">200–300 w</div>
+      </div>
+      <div style="background:rgba(255,107,91,0.2);border:1px solid rgba(255,107,91,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:#ff9d91;margin-bottom:0.2rem;">⑤ Results</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">~300 w</div>
+      </div>
+      <div style="background:rgba(255,107,91,0.2);border:1px solid rgba(255,107,91,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:#ff9d91;margin-bottom:0.2rem;">⑥ Discussion</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">500–600 w</div>
+      </div>
+      <div style="background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:var(--yellow);margin-bottom:0.2rem;">⑦ Conclusion</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">50–100 w</div>
+      </div>
+      <div style="background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.4);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:var(--yellow);margin-bottom:0.2rem;">⑧ Improvements</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">300–400 w</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.2rem;">⑨ Word Count</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);">required</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.5rem 0.85rem;text-align:center;min-width:90px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.2rem;">⑩ References</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);">APA 7th</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-grid">
+
+    <!-- §1 TITLE -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-teal">🏷️</div>
+        <div class="guide-card-title">
+          <h3>1. Title</h3>
+          <div class="word-count">5–10 words · Same as your research question in statement form</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <div class="tip-box"><strong>Rules:</strong> Not bolded, not centred, no full stop, less than 15 words, title-case capitalised. Names your IV and DV.</div>
+        <p style="font-size:0.9rem;color:var(--text-muted);">Template: <em>"The Effect of [IV] on [DV] in [Target Population]"</em></p>
+      </div>
+    </div>
+
+    <!-- §2 RATIONALE -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-teal">📖</div>
+        <div class="guide-card-title">
+          <h3>2. Rationale</h3>
+          <div class="word-count">200–250 words · 3+ in-text citations · Inverted triangle structure</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <div class="tip-box"><strong>Think of it as an inverted triangle</strong> — start broad (background theory), narrow down to the original study, then to your specific modification.</div>
+        <ul class="steps-list">
+          <li><strong>Para 1 — "Hook me" (Background):</strong> Define key psychological terms, your IV and DV, and identify a societal problem that makes this research relevant. Include 3+ in-text citations.</li>
+          <li><strong>Para 2 — "Teach me" (Theory):</strong> Explain the background theory (e.g. context-dependent memory, encoding specificity, environmental context effects). Link concepts to memory research.</li>
+          <li><strong>Para 3 — "Remind me" (Original Study):</strong> Briefly describe the original study — sample, operationalised variables, results, and identify a gap or limitation. Include this as your 4th citation. Name all aspects you plan to modify.</li>
+          <li><strong>Para 4 — "Convince me" (Modified Study):</strong> Describe your modifications (use "Modified Study"), justify each with an external source, and tie off to your research question.</li>
+        </ul>
+        <div class="marks-tag-row" style="margin-top:0.75rem;">
+          <p>Modifications marked on:</p>
+          <span class="mark-tag mark-good">✓ Justified = 2 marks</span>
+          <span class="mark-tag mark-mid">≈ Feasible = 1 mark</span>
+          <span class="mark-tag mark-low">✗ Inappropriate = 0 marks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §3 RQ & HYPOTHESIS -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-teal">❓</div>
+        <div class="guide-card-title">
+          <h3>3. Research Question &amp; Hypotheses</h3>
+          <div class="word-count">50–100 words · RQ + Null + Alternative</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <ul class="steps-list">
+          <li><strong>Research Question:</strong> Must be specific (IV, DV, target population), relevant, investigable, and phrased as a closed yes/no question. Start with: "To what extent…" / "How does…" / "Does…" / "What effect does…"</li>
+          <li><strong>Null Hypothesis:</strong> States there is no significant difference/effect between conditions.</li>
+          <li><strong>Alternative Hypothesis:</strong> Must be specific (operationalised IV and DV), directional (predicts which group will score higher/lower), testable and falsifiable.</li>
+        </ul>
+        <div class="marks-tag-row" style="margin-top:0.75rem;">
+          <span class="mark-tag mark-good">✓ Specific &amp; relevant = top mark</span>
+          <span class="mark-tag mark-mid">≈ Relevant = mid mark</span>
+          <span class="mark-tag mark-low">✗ Inappropriate = low mark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §4 METHOD -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-purple">🔬</div>
+        <div class="guide-card-title">
+          <h3>4. Methodology</h3>
+          <div class="word-count">Design 100–150 w · Participants 50–100 w · Ethics 50 w</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1rem;">Three sub-sections. Write in past tense. Step-by-step procedure goes in an appendix — not the body.</p>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">① Experimental Design &amp; Variables (100–150 words)</p>
+          <ul class="steps-list">
+            <li>State the research design (repeated measures or independent groups) and <strong>justify</strong> why</li>
+            <li>Operationalise the IV (what levels/conditions you used)</li>
+            <li>Describe how the DV was measured (units, tool, scale)</li>
+            <li>List control variables (EVs you controlled)</li>
+            <li>Describe modifications in detail — use terms <em>Refinement, Extension,</em> or <em>Redirection</em></li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">② Participants (50–100 words)</p>
+          <ul class="steps-list">
+            <li>Describe target population and your sample (age, year level, location)</li>
+            <li>State recruitment method and sampling technique (convenience, random, stratified)</li>
+            <li>Justify sampling method</li>
+            <li>Compare to the original study's participants — explain any changes</li>
+            <li>State how participants were allocated to groups (if independent groups design)</li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">③ Safety &amp; Ethics (~50 words)</p>
+          <div class="tip-box"><strong>Don't just list ethics — connect them to your study.</strong> The ISMG rewards <em>considered</em> management. For each ethical issue, explain specifically how it was managed <em>in your experiment</em> and why it mattered given your modification.</div>
+          <div style="background:var(--bg);border-radius:10px;padding:1rem;margin-bottom:0.75rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;">❌ Listing (low marks)</p>
+            <p style="font-size:0.84rem;color:var(--text-muted);font-style:italic;">"Informed consent was obtained. Participants had the right to withdraw. Confidentiality was maintained."</p>
+          </div>
+          <div style="background:#e0f7f5;border-radius:10px;padding:1rem;margin-bottom:0.75rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;font-weight:700;color:var(--teal-dark);margin-bottom:0.6rem;">✅ Considered management (top marks)</p>
+            <p style="font-size:0.84rem;color:var(--navy);font-style:italic;">"Because participants were exposed to background noise during the study phase, informed consent was obtained prior to participation so they were aware of the conditions. Participants were reminded of their right to withdraw at any time without consequence. Confidentiality was maintained by assigning each participant a code number rather than recording names."</p>
+          </div>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Ask yourself for each ethical consideration:</p>
+          <ul class="steps-list">
+            <li>Why does this ethical principle apply to <em>my specific study</em>?</li>
+            <li>What did I actually do to manage it — not just that I did it, but <em>how</em>?</li>
+            <li>Does my modification create any <em>new</em> ethical considerations the original study didn't have?</li>
+          </ul>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.75rem;">Write in past tense. Include consent forms in appendix as supporting evidence. Refer to the <strong>ISMG</strong> — top marks require <em>considered</em> management, not just identification.</p>
+        </div>
+        <div class="marks-tag-row">
+          <span class="mark-tag mark-good">✓ Considered management = top mark</span>
+          <span class="mark-tag mark-mid">≈ Management = mid mark</span>
+          <span class="mark-tag mark-low">✗ Inadequate = low mark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §5 RESULTS -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-coral">📊</div>
+        <div class="guide-card-title">
+          <h3>5. Results</h3>
+          <div class="word-count">~300 words · Tables &amp; figures excluded from word count</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1rem;">Four sub-sections — report only, do not interpret (save that for Discussion).</p>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">5.1 Raw Data</p>
+          <p style="font-size:0.88rem;color:var(--text-muted);">One sentence introducing the table. Table 1 with all raw data — layout must match your experimental design. Heading above the table.</p>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">5.2 Descriptive Statistics (100–150 words)</p>
+          <ul class="steps-list">
+            <li>Check for normality (histogram or Kolmogorov-Smirnov) → choose mean or median accordingly</li>
+            <li>Calculate: M or Mdn, SD or IQR, SEM, confidence intervals</li>
+            <li>Table 2 — include mean, SD, SEM, sample size for each condition</li>
+            <li>Figure 1 — column/bar graph with means + confidence interval error bars, labelled axes, B&amp;W</li>
+            <li>Write 100–150 words: which measure chosen and why, compare group means, compare SDs, comment on error bar overlap and what it means</li>
+          </ul>
+          <div class="tip-box" style="margin-top:0.5rem;"><strong>Sentence template:</strong> "On average, participants had [higher/lower] [DV] in the [condition 1] (<em>M</em> = __) than the [condition 2] (<em>M</em> = __)."</div>
+        </div>
+
+        <div style="margin-bottom:0.75rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">5.3 Inferential Statistics (100–150 words)</p>
+          <ul class="steps-list">
+            <li>State the statistical test used (e.g. independent samples t-test) and justify why (research design, data type, normality, outliers)</li>
+            <li>Check assumptions: level of measurement, independence, normality, equal variance</li>
+            <li>Report t-value and p-value; add to Table 2</li>
+            <li>State whether the result is statistically significant (p &lt; 0.05 or p ≥ 0.05)</li>
+            <li>Accept or reject the null hypothesis</li>
+          </ul>
+          <div class="tip-box" style="margin-top:0.5rem;"><strong>Sentence template:</strong> "There is/is not a statistically significant difference (<em>p</em> = __) in [DV] between [condition 1] and [condition 2] because the p-value is lower/higher than 0.05. This means that [IV] does/does not affect [DV] for [target population]."</div>
+        </div>
+
+        <div class="marks-tag-row">
+          <p>Data processing marked on:</p>
+          <span class="mark-tag mark-good">✓ Correct &amp; relevant = top mark</span>
+          <span class="mark-tag mark-mid">≈ Basic = mid mark</span>
+          <span class="mark-tag mark-low">✗ Incorrect/irrelevant = low mark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §6 DISCUSSION -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-coral">🔍</div>
+        <div class="guide-card-title">
+          <h3>6. Discussion</h3>
+          <div class="word-count">500–600 words · Trends · Limitations · Reliability &amp; Validity</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1rem;">Three parts — analysis of results, then evaluation through reliability &amp; validity.</p>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Part 1 — Analyse Results</p>
+          <ul class="steps-list">
+            <li>First sentence = biggest finding most useful for answering the RQ</li>
+            <li>Describe trends/patterns using words: <em>increased, decreased, linear, gradually, sharply</em></li>
+            <li>Reference specific data values from your tables/figures</li>
+            <li>Link results to psychological theory (context-dependent memory, encoding specificity) and to the original study (Grant et al., 1998)</li>
+          </ul>
+          <div class="tip-box" style="margin-top:0.5rem;"><strong>Uncertainty template:</strong> "The [condition] scores had a greater dispersion (<em>SD</em> = __) than the [condition] (<em>SD</em> = __) which increases the uncertainty of the results for the [condition] scores."</div>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Part 2 — Limitations (with structure: Identify → Describe → Evaluate → Improve)</p>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">Common limitations for this type of experiment:</p>
+          <div style="display:grid;gap:0.5rem;">
+            <div style="background:var(--bg);border-radius:8px;padding:0.75rem;font-size:0.84rem;">
+              <span style="font-weight:600;color:var(--navy);">Sample bias</span> — convenience sampling → unrepresentative of target population → lowers <em>external (population) validity</em> → improve with random/stratified sampling
+            </div>
+            <div style="background:var(--bg);border-radius:8px;padding:0.75rem;font-size:0.84rem;">
+              <span style="font-weight:600;color:var(--navy);">Order effects</span> (repeated measures only) — practice/fatigue effects → confounding variable → lowers <em>internal validity</em> → improve with counterbalancing
+            </div>
+            <div style="background:var(--bg);border-radius:8px;padding:0.75rem;font-size:0.84rem;">
+              <span style="font-weight:600;color:var(--navy);">Demand characteristics</span> — participants guess the aim → alter behaviour → lowers <em>internal validity</em> → improve with single-blind procedure
+            </div>
+            <div style="background:var(--bg);border-radius:8px;padding:0.75rem;font-size:0.84rem;">
+              <span style="font-weight:600;color:var(--navy);">Lack of mundane realism</span> — artificial task → lowers <em>external validity</em> → improve with more realistic stimulus
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:0.75rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Part 3 — Reliability &amp; Validity (include BOTH types of each)</p>
+          <ul class="steps-list">
+            <li><strong>External reliability:</strong> Would repeating the experiment produce similar results? (Test-retest, inter-rater)</li>
+            <li><strong>Internal reliability:</strong> Is your instrument/measure internally consistent?</li>
+            <li><strong>Internal validity:</strong> Were effects due to your IV, or could confounding variables explain them?</li>
+            <li><strong>External validity:</strong> Can your findings generalise beyond this specific sample/setting? (population validity, ecological validity)</li>
+            <li>Include <strong>both strengths and weaknesses</strong> — don't only list problems</li>
+          </ul>
+        </div>
+
+        <div class="marks-tag-row">
+          <p>Reliability &amp; validity marked on:</p>
+          <span class="mark-tag mark-good">✓ Justified discussion = top mark</span>
+          <span class="mark-tag mark-mid">≈ Reasonable description = mid mark</span>
+          <span class="mark-tag mark-low">✗ Cursory/simplistic = low mark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §7 CONCLUSION -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-yellow">✅</div>
+        <div class="guide-card-title">
+          <h3>7. Conclusion</h3>
+          <div class="word-count">50–100 words · Directly answers the RQ · Include p-value</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <div class="tip-box"><strong>Must include:</strong> restate the RQ, state the statistical result (include p-value), state whether null hypothesis was accepted or rejected, and acknowledge key limitations.</div>
+        <ul class="steps-list">
+          <li>Restate the aim/RQ</li>
+          <li>Summarise findings — use the word "significant" where appropriate</li>
+          <li>Compare to the original study and link to theory</li>
+          <li>Explicitly answer the research question</li>
+          <li>Do NOT introduce new information here</li>
+        </ul>
+        <div class="marks-tag-row" style="margin-top:0.75rem;">
+          <span class="mark-tag mark-good">✓ Justified &amp; linked to RQ = top mark</span>
+          <span class="mark-tag mark-mid">≈ Reasonable &amp; relevant = mid mark</span>
+          <span class="mark-tag mark-low">✗ Inappropriate/irrelevant = low mark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §8 IMPROVEMENTS -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-yellow">🔧</div>
+        <div class="guide-card-title">
+          <h3>8. Improvements &amp; Extensions</h3>
+          <div class="word-count">300–400 words · 2–4 improvements + at least 1 extension</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <div class="tip-box"><strong>Golden rule:</strong> Every improvement must solve a problem already identified in your Discussion. Do NOT suggest an improvement without first identifying the limitation it fixes.</div>
+        <ul class="steps-list">
+          <li>For each improvement: (1) Name the limitation, (2) State the improvement, (3) Explain the effect of the change, (4) State how it improves reliability or validity</li>
+          <li>Include at least 2 improvements from your Discussion limitations</li>
+          <li>Include at least 1 extension — a new direction for future research beyond fixing current problems</li>
+        </ul>
+        <div style="background:var(--bg);border-radius:10px;padding:1rem;margin-top:0.75rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Example structure:</p>
+          <p style="font-size:0.84rem;color:var(--text);line-height:1.6;"><em>"The use of convenience sampling limited the external validity of this study because… An improvement would be to use random sampling, which would produce a more representative sample of the target population and increase external (population) validity."</em></p>
+        </div>
+        <div class="marks-tag-row" style="margin-top:0.75rem;">
+          <span class="mark-tag mark-good">✓ Logically derived from analysis = top mark</span>
+          <span class="mark-tag mark-mid">≈ Related to analysis = mid mark</span>
+          <span class="mark-tag mark-low">✗ Ineffective/irrelevant = low mark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- §9-10 WORD COUNT + REFERENCES -->
+    <div class="guide-card" onclick="toggleCard(this)">
+      <div class="guide-card-header">
+        <div class="guide-icon light-teal">📚</div>
+        <div class="guide-card-title">
+          <h3>9–10. Word Count &amp; References</h3>
+          <div class="word-count">Word count required at end · References on new page · APA 7th</div>
+        </div>
+        <span class="guide-chevron">▼</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-divider"></div>
+        <ul class="steps-list">
+          <li>State your word count at the end of Section 9</li>
+          <li>References begin on a new page as Section 10</li>
+          <li>Heading: <strong>References</strong> — bold, centred</li>
+          <li>Double-spaced, hanging indent, alphabetical order</li>
+          <li>Every in-text citation = one reference list entry (and vice versa)</li>
+          <li>The original study (Grant et al., 1998) must be included in your reference list</li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.75rem;">See the <strong>🔖 APA Guide</strong> tab for full reference formats (journal, book, webpage, dictionary, etc.)</p>
+      </div>
+    </div>
+
+  </div><!-- /guide-grid -->
+</div>
+</div>
+
+<!-- ═══════════════════════════════ MARKING CRITERIA ═══════════════════════════════ -->
+</div>
+</body>
+</html>
