@@ -282,15 +282,6 @@
     .hero-inner { grid-template-columns:1fr; }
     .hero-image { display:none; }
   }
-
-  .reading-row { display:flex;align-items:center;gap:1rem;padding:0.85rem 1.1rem;text-decoration:none;color:var(--navy);border-bottom:1px solid #f0f4f8;transition:background 0.15s; }
-  .reading-row:last-child { border-bottom:none; }
-  .reading-row:hover { background:#f0f9ff; }
-  .reading-icon { font-size:1.4rem;flex-shrink:0; }
-  .reading-info { flex:1; }
-  .reading-title { font-weight:700;font-size:0.9rem;color:var(--navy); }
-  .reading-meta { font-size:0.78rem;color:#64748b;margin-top:2px; }
-  .reading-dl { font-size:0.78rem;font-weight:700;color:var(--teal);white-space:nowrap;flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -307,7 +298,6 @@
     <li><a href="#" onclick="showSection('termplan');return false;">Term Plan</a></li>
     <li><a href="#" onclick="showSection('tracking');return false;">Tracking</a></li>
     <li><a href="#" onclick="showSection('lessons');return false;">Lessons</a></li>
-    <li><a href="#" onclick="showSection('readings');return false;">Readings</a></li>
   </ul>
 </nav>
 
@@ -428,13 +418,7 @@
     <div class="assess-card ext"><div class="assess-label">External Assessment</div><div class="assess-title">Examination</div><div class="assess-weight">50%</div><div class="assess-unit">Units 3 &amp; 4 — QCAA set &amp; marked</div><div class="assess-chips"><span class="assess-chip">2 × 90 min papers</span><span class="assess-chip">Obj. 1–4</span></div></div>
   </div>
   <div class="assess-detail"><div class="assess-detail-header"><div class="assess-dot dot-ia1"></div><h3>IA1 · Data Test — 10 marks total</h3></div><div class="assess-info-grid"><div class="assess-info-box"><div class="assess-info-label">Time</div><div class="assess-info-value">5 min perusal + 60 min working</div></div><div class="assess-info-box"><div class="assess-info-label">Format</div><div class="assess-info-value">Single words, sentences (≤150 words), calculations</div></div><div class="assess-info-box"><div class="assess-info-label">Stimulus</div><div class="assess-info-value">2–4 unseen datasets from Unit 3 practicals</div></div><div class="assess-info-box"><div class="assess-info-label">Calculator</div><div class="assess-info-value">QCAA-approved graphics or scientific</div></div></div><div class="obj-tags"><span class="obj-tag">~30% Obj 2 — Apply</span><span class="obj-tag">~30% Obj 3 — Analyse</span><span class="obj-tag">~40% Obj 4 — Interpret</span></div></div>
-  <div class="assess-detail"><div class="assess-detail-header"><div class="assess-dot dot-ia2"></div><h3>IA2 · Student Experiment — 20 marks total</h3></div><div class="assess-info-grid"><div class="assess-info-box"><div class="assess-info-label">Response</div><div class="assess-info-value">Up to 2000 words OR 11-min multimodal</div></div><div class="assess-info-box"><div class="assess-info-label">Unit</div><div class="assess-info-value">Unit 3 (Brain function, Sensation, Memory or Learning)</div></div><div class="assess-info-box"><div class="assess-info-label">Task</div><div class="assess-info-value">Modify a class experiment; develop own research question</div></div><div class="assess-info-box"><div class="assess-info-label">Class time</div><div class="assess-info-value">~10 hours</div></div></div><div class="obj-tags"><span class="obj-tag">Forming (5 marks) — Obj 1, 2, 6</span><span class="obj-tag">Finding (5 marks) — Obj 1, 6</span><span class="obj-tag">Analysing (5 marks) — Obj 2, 3</span><span class="obj-tag">Interpreting &amp; Evaluating (5 marks) — Obj 4, 5</span></div>
-    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1rem;">
-      <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/RedlynchYr12Psych_IA2Tasksheet.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#1a2744;border:1px solid rgba(232,184,75,0.4);color:#e8b84b;padding:0.5rem 0.9rem;border-radius:8px;text-decoration:none;font-size:0.82rem;font-weight:600;">📋 Task Sheet</a>
-      <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/IA2%20Template%20-%20%20A%20structure%20with%20a%20Guide%20on%20key%20issues.docx" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#1a2744;border:1px solid rgba(42,125,123,0.4);color:#4db8b5;padding:0.5rem 0.9rem;border-radius:8px;text-decoration:none;font-size:0.82rem;font-weight:600;">📝 Report Template</a>
-      <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/Grant%20et%20al%201998_OriginalStudy.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#1a2744;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);padding:0.5rem 0.9rem;border-radius:8px;text-decoration:none;font-size:0.82rem;font-weight:600;">🔬 Grant et al. Original Study</a>
-      <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/index.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#e8b84b;border:1px solid #e8b84b;color:#1a2744;padding:0.5rem 0.9rem;border-radius:8px;text-decoration:none;font-size:0.82rem;font-weight:600;">🌐 IA2 Mini-Site</a>
-    </div></div>
+  <div class="assess-detail"><div class="assess-detail-header"><div class="assess-dot dot-ia2"></div><h3>IA2 · Student Experiment — 20 marks total</h3></div><div class="assess-info-grid"><div class="assess-info-box"><div class="assess-info-label">Response</div><div class="assess-info-value">Up to 2000 words OR 11-min multimodal</div></div><div class="assess-info-box"><div class="assess-info-label">Unit</div><div class="assess-info-value">Unit 3 (Brain function, Sensation, Memory or Learning)</div></div><div class="assess-info-box"><div class="assess-info-label">Task</div><div class="assess-info-value">Modify a class experiment; develop own research question</div></div><div class="assess-info-box"><div class="assess-info-label">Class time</div><div class="assess-info-value">~10 hours</div></div></div><div class="obj-tags"><span class="obj-tag">Forming (5 marks) — Obj 1, 2, 6</span><span class="obj-tag">Finding (5 marks) — Obj 1, 6</span><span class="obj-tag">Analysing (5 marks) — Obj 2, 3</span><span class="obj-tag">Interpreting &amp; Evaluating (5 marks) — Obj 4, 5</span></div></div>
   <div class="assess-detail"><div class="assess-detail-header"><div class="assess-dot dot-ia3"></div><h3>IA3 · Research Investigation — 20 marks total</h3></div><div class="assess-info-grid"><div class="assess-info-box"><div class="assess-info-label">Response</div><div class="assess-info-value">Up to 2000 words OR 11-min multimodal</div></div><div class="assess-info-box"><div class="assess-info-label">Unit</div><div class="assess-info-value">Unit 4 (Social psych, Interpersonal, Attitudes or Cross-cultural)</div></div><div class="assess-info-box"><div class="assess-info-label">Task</div><div class="assess-info-value">Evaluate a claim using scientifically credible sources</div></div><div class="assess-info-box"><div class="assess-info-label">Class time</div><div class="assess-info-value">~10 hours</div></div></div><div class="obj-tags"><span class="obj-tag">Forming &amp; Finding (5 marks) — Obj 1, 2, 6</span><span class="obj-tag">Analysing (5 marks) — Obj 3</span><span class="obj-tag">Interpreting (5 marks) — Obj 1, 4</span><span class="obj-tag">Evaluating (5 marks) — Obj 5</span></div></div>
   <div class="assess-detail"><div class="assess-detail-header"><div class="assess-dot dot-ext"></div><h3>External Examination — 2 Papers (QCAA)</h3></div><div class="assess-info-grid"><div class="assess-info-box"><div class="assess-info-label">Paper 1</div><div class="assess-info-value">5 min perusal + 90 min working</div></div><div class="assess-info-box"><div class="assess-info-label">Paper 2</div><div class="assess-info-value">5 min perusal + 90 min working</div></div><div class="assess-info-box"><div class="assess-info-label">Content</div><div class="assess-info-value">Units 3 &amp; 4 Science Understanding subject matter</div></div><div class="assess-info-box"><div class="assess-info-label">Format</div><div class="assess-info-value">Multiple choice, short answer, extended response, data interpretation</div></div></div><div class="obj-tags"><span class="obj-tag">Obj 1 — Describe</span><span class="obj-tag">Obj 2 — Apply</span><span class="obj-tag">Obj 3 — Analyse</span><span class="obj-tag">Obj 4 — Interpret</span></div></div>
 
@@ -499,193 +483,6 @@
           <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/IA2%20Template%20-%20%20A%20structure%20with%20a%20Guide%20on%20key%20issues.docx" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(42,125,123,0.15);border:1px solid rgba(42,125,123,0.4);color:#4db8b5;padding:0.45rem 0.85rem;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:600;">📝 IA2 Template</a>
           <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/Grant%20et%20al%201998_OriginalStudy.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);padding:0.45rem 0.85rem;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:600;">🔬 Grant et al. Original Study</a>
         </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ══ MANDATORY READINGS ══ -->
-<section id="readings" class="section">
-  <div class="section-header"><h2>Mandatory Readings</h2><div class="divider"></div><p>Unit 3 &amp; Unit 4 · Organised by topic · Click any reading to download the PDF.</p></div>
-
-  <!-- UNIT 3 -->
-  <div style="margin-bottom:2rem;">
-    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-      <div style="background:var(--teal);color:white;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.35rem 0.8rem;border-radius:8px;">Unit 3</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);">Individual Thinking</div>
-    </div>
-
-    <!-- T2 Sensation & Perception -->
-    <div style="margin-bottom:1rem;">
-      <div style="background:var(--navy);color:white;padding:0.6rem 1rem;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:0.6rem;">
-        <span style="background:rgba(255,255,255,0.15);font-size:0.75rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:5px;">T2</span>
-        <span style="font-weight:600;">Sensation &amp; Perception</span>
-      </div>
-      <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%203_Mandatory%20readings/U3T2%20Morrison_2009.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Morrison (2009)</div>
-            <div class="reading-meta">Sensation &amp; Perception · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%203_Mandatory%20readings/U3T2%20De-Bru%C3%AFne-et-al.-2018-Cross%E2%80%90cultural-differences-in-object-recognition.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">De-Bruïne et al. (2018)</div>
-            <div class="reading-meta">Cross-cultural differences in object recognition · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%203_Mandatory%20readings/U3T2%202013_Patel-Demorest_Chapter.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Patel &amp; Demorest (2013)</div>
-            <div class="reading-meta">Sensation &amp; Perception — Chapter · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-      </div>
-    </div>
-
-    <!-- T3 Memory -->
-    <div style="margin-bottom:1rem;">
-      <div style="background:var(--navy);color:white;padding:0.6rem 1rem;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:0.6rem;">
-        <span style="background:rgba(255,255,255,0.15);font-size:0.75rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:5px;">T3</span>
-        <span style="font-weight:600;">Memory</span>
-      </div>
-      <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%203_Mandatory%20readings/U3T3%20Grant%20et%20al%201998.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Grant et al. (1998)</div>
-            <div class="reading-meta">Context-dependent memory for meaningful material · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-      </div>
-    </div>
-
-    <!-- T4 Learning -->
-    <div style="margin-bottom:1rem;">
-      <div style="background:var(--navy);color:white;padding:0.6rem 1rem;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:0.6rem;">
-        <span style="background:rgba(255,255,255,0.15);font-size:0.75rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:5px;">T4</span>
-        <span style="font-weight:600;">Learning</span>
-      </div>
-      <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%203_Mandatory%20readings/U3T4%20Bandura%201977.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Bandura (1977)</div>
-            <div class="reading-meta">Social learning theory · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- UNIT 4 -->
-  <div style="margin-bottom:2rem;">
-    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-      <div style="background:var(--gold);color:var(--navy);font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.35rem 0.8rem;border-radius:8px;">Unit 4</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);">Social Cognition</div>
-    </div>
-
-    <!-- T1 Social Psychology -->
-    <div style="margin-bottom:1rem;">
-      <div style="background:var(--navy);color:white;padding:0.6rem 1rem;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:0.6rem;">
-        <span style="background:rgba(255,255,255,0.15);font-size:0.75rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:5px;">T1</span>
-        <span style="font-weight:600;">Social Psychology</span>
-      </div>
-      <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T1%20Asch%201955.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Asch (1955)</div>
-            <div class="reading-meta">Conformity — line experiments · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T1%20Cialdini%202006.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Cialdini (2006)</div>
-            <div class="reading-meta">Influence &amp; persuasion · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T1%20Haney%2C%20Banks%20%26%20Zimbardo%201973.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Haney, Banks &amp; Zimbardo (1973)</div>
-            <div class="reading-meta">Stanford Prison Experiment · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T1%20Milgram%201963.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Milgram (1963)</div>
-            <div class="reading-meta">Behavioural study of obedience · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-      </div>
-    </div>
-
-    <!-- T2 Interpersonal Relationships -->
-    <div style="margin-bottom:1rem;">
-      <div style="background:var(--navy);color:white;padding:0.6rem 1rem;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:0.6rem;">
-        <span style="background:rgba(255,255,255,0.15);font-size:0.75rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:5px;">T2</span>
-        <span style="font-weight:600;">Interpersonal Relationships</span>
-      </div>
-      <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T2%20Buss%20et%20al%201990.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Buss et al. (1990)</div>
-            <div class="reading-meta">Jealousy &amp; mate selection · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T2%20Latane%20%26%20Darley%201969.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Latané &amp; Darley (1969)</div>
-            <div class="reading-meta">Bystander intervention · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T2%20Rollie%20%26%20Duck%202006.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Rollie &amp; Duck (2006)</div>
-            <div class="reading-meta">Relationship dissolution model · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
-      </div>
-    </div>
-
-    <!-- T3 Attitudes & Prejudice -->
-    <div style="margin-bottom:1rem;">
-      <div style="background:var(--navy);color:white;padding:0.6rem 1rem;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:0.6rem;">
-        <span style="background:rgba(255,255,255,0.15);font-size:0.75rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:5px;">T3</span>
-        <span style="font-weight:600;">Attitudes &amp; Prejudice</span>
-      </div>
-      <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
-        <a href="https://rebeccabiddle3-collab.github.io/RSC-Year-12-Psychology/UNIT%204_Mandatory%20readings/U4T3%20Bargh%2C%20Chen%20%26%20Burrows%201996.pdf" target="_blank" class="reading-row">
-          <div class="reading-icon">📄</div>
-          <div class="reading-info">
-            <div class="reading-title">Bargh, Chen &amp; Burrows (1996)</div>
-            <div class="reading-meta">Automaticity of social behaviour · PDF</div>
-          </div>
-          <div class="reading-dl">Download ↓</div>
-        </a>
       </div>
     </div>
   </div>
@@ -1809,7 +1606,7 @@ function slideNav(rowId, lessonIdx, dir) {
 }
 
 // ══ NAV ══
-const SECTION_IDS = ['overview','objectives','assessments','termplan','tracking','lessons','readings'];
+const SECTION_IDS = ['overview','objectives','assessments','termplan','tracking','lessons'];
 function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
